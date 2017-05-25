@@ -4,9 +4,8 @@ import routing from './main.routes';
 
 export class MainController {
   $http;
-
-  awesomeThings = [];
-  newThing = '';
+  tasks = [];
+//  newThing = '';
 
   /*@ngInject*/
   constructor($http) {
@@ -14,24 +13,25 @@ export class MainController {
   }
 
   $onInit() {
-    this.$http.get('/api/things')
+    this.$http.get('/api/tasks')
       .then(response => {
-        this.awesomeThings = response.data;
+        this.tasks = response.data;
       });
   }
 
-  addThing() {
-    if(this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
-      });
-      this.newThing = '';
-    }
-  }
+//  addThing() {
+ //   if(this.newThing) {
+  //    this.$http.post('/api/things', {
+   //     name: this.newThing
+    //  });
+ //     this.newThing = '';
+  //  }
+ // }
 
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
-  }
+//  deleteThing(thing) {
+ //   this.$http.delete(`/api/things/${thing._id}`);
+ // }
+
 }
 
 export default angular.module('motiusDemoApp.main', [uiRouter])

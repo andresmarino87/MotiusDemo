@@ -10,7 +10,7 @@ import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 
 import {
-  routeConfig
+	routeConfig
 } from './app.config';
 
 import navbar from '../components/navbar/navbar.component';
@@ -23,13 +23,11 @@ import util from '../components/util/util.module';
 import './app.scss';
 
 angular.module('motiusDemoApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar,
-  footer, main, constants, util, addCase
-])
-  .config(routeConfig);
+	footer, main, constants, util, addCase
+]).config(routeConfig);
 
-angular.element(document)
-  .ready(() => {
-    angular.bootstrap(document, ['motiusDemoApp'], {
-      strictDi: true
-    });
-  });
+angular.element(document).ready(() => {
+	angular.bootstrap(document, ['motiusDemoApp'], {
+		strictDi: true
+	});
+});
