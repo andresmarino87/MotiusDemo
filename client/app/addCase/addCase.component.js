@@ -5,17 +5,30 @@ import routes from './addCase.routes';
 
 export class AddCaseComponent {
 	$http;
-	tasks = [];
 
 	/*@ngInject*/
 	constructor($http) {
 		this.$http = $http;
 	}
 
-	$onInit() {
-		this.$http.get('/api/tasks').then(response => {
-			this.tasks = response.data;
-		});
+	addTask(task) {
+		console.log(task);
+		var myJSON = JSON.stringify(task);
+console.log(myJSON);
+		this.$http.post('/api/tasks/', {
+			task
+		}).then(function successCallback(response) {
+		console.log("success");
+		console.log(response);
+
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(response) {
+		console.log("error");
+		console.log(response);
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
 	}
 }
 
