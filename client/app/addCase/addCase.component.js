@@ -5,6 +5,7 @@ import routes from './addCase.routes';
 
 export class AddCaseComponent {
 	$http;
+	button_label = "";
 
 	/*@ngInject*/
 	constructor($http) {
@@ -17,12 +18,16 @@ export class AddCaseComponent {
 			title: task.title,
 			body: "<p>"+task.body+"</p>"
 		}).then(function successCallback(response) {
+			task.title = '';
+			task.body = '';
 		}, function errorCallback(response) {
 		});
 	}
 
 	isLoading() {
-    	return this.$http.pendingRequests.length > 0;
+		var res = this.$http.pendingRequests.length > 0;
+		this.button_label = (res) ? "Creating":"Create";
+    	return res;
 	}
 }
 

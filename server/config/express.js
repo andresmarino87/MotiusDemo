@@ -65,7 +65,7 @@ export default function(app) {
   if(env !== 'test' && !process.env.SAUCE_USERNAME) {
     app.use(lusca({
       csrf: {
-        angular: false
+        angular: true
       },
       xframe: 'SAMEORIGIN',
       hsts: {
