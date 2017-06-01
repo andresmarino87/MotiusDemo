@@ -12,23 +12,17 @@ export class AddCaseComponent {
 	}
 
 	addTask(task) {
-		console.log(task);
 		var myJSON = JSON.stringify(task);
-console.log(myJSON);
 		this.$http.post('/api/tasks/', {
-			task
+			title: task.title,
+			body: "<p>"+task.body+"</p>"
 		}).then(function successCallback(response) {
-		console.log("success");
-		console.log(response);
+		}, function errorCallback(response) {
+		});
+	}
 
-    // this callback will be called asynchronously
-    // when the response is available
-  }, function errorCallback(response) {
-		console.log("error");
-		console.log(response);
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });
+	isLoading() {
+    	return this.$http.pendingRequests.length > 0;
 	}
 }
 
