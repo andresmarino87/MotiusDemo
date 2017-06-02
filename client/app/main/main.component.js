@@ -5,10 +5,12 @@ import routing from './main.routes';
 export class MainController {
 	$http;
 	tasks = [];
+	modal;
 
 	/*@ngInject*/
-	constructor($http) {
+	constructor($http, $uibModal) {
 		this.$http = $http;
+		this.modal = $uibModal;
 	}
 
 	$onInit() {
@@ -18,9 +20,17 @@ export class MainController {
 	}
 
 	display_milestone(task){
-		console.log(task.title);
+		const modalTemplate = '<div class="source-list-modal"><div class="modal-header"><h3 class="modal-title">My Modal Title</h3><div class="controls"><button class="btn btn-primary" type="button" ng-click="save()">Save</button></div></div><div class="modal-body"><my-directive some-data="syncData" more-data="asyncData"></my-directive></div></div>';
+		console.log(task.milestones);
+		this.modal.open({
+            animation: true,
+			template: modalTemplate
+		//user => {
+//      user.$remove();
+  //    this.users.splice(this.users.indexOf(user), 1);
+   // }
+		}).result.then(function(){}, function(res){});
 	}
-
 }
 
 export default angular.module('motiusDemoApp.main', [uiRouter])
