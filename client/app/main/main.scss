@@ -1,10 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
-$primary-color: #03A9F4;
-$padding-b: calc(100% - 16px);
-$duration: .3s;
-$radius: 5px;
-$background-color: #F0F0F0;
+$primary-color	  : #03A9F4;
+$padding-b		  : calc(100% - 16px);
+$duration		  : .3s;
+$radius           : 5px;
+$background-color : #F0F0F0;
+$white-color	  : #FFF;
+$text-color       : #606060;
+
 
 html {
 	height: 100%;
@@ -69,7 +72,7 @@ button:hover {
 		@extend .border-radius-top;
 		width: 100%;
 		padding: 10px 16px;
-		color: #fff;
+		color: $white-color;
 		font-size: 1.4em;
 		line-height: 1.6em;
 		margin: 0;
@@ -97,7 +100,7 @@ button:hover {
 	@extend .border-radius-bottom;
 	background-color: $primary-color;
 	padding: 10px 16px;
-	color: #fff;
+	color: $white-color;
 	font-size: 1.4em;
 	line-height: 1.6em;
 	margin: 0;
