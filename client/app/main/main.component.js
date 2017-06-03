@@ -19,17 +19,19 @@ export class MainController {
 		});
 	}
 
-	display_milestone(task){
+	display_milestone(task) {
 //		const modalTemplate = '<div class="source-list-modal"><div class="modal-header"><h3 class="modal-title">My Modal Title</h3><div class="controls"><button class="btn btn-primary" type="button" ng-click="save()">Save</button></div></div><div class="modal-body"><my-directive some-data="syncData" more-data="asyncData"></my-directive></div></div>';
 		console.log(task.milestones);
 		this.modal.open({
-            animation: true,
+			animation: true,
 			templateUrl: 'http://localhost:3000/addCase'
 		//user => {
 //      user.$remove();
   //    this.users.splice(this.users.indexOf(user), 1);
    // }
-		}).result.then(function(){}, function(res){});
+		}).result.then(function() {}, function(res) {
+			console.log(res);
+		});
 	}
 }
 

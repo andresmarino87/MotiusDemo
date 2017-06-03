@@ -36,4 +36,3 @@ setImmediate(startServer);
 
 // Expose app
 exports = module.exports = app;
-	
