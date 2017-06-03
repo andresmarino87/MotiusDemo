@@ -5,7 +5,7 @@ import routes from './addCase.routes';
 
 export class AddCaseComponent {
 	$http;
-	button_label = "";
+	button_label = '';
 
 	/*@ngInject*/
 	constructor($http) {
@@ -13,10 +13,9 @@ export class AddCaseComponent {
 	}
 
 	addTask(task) {
-		var myJSON = JSON.stringify(task);
 		this.$http.post('/api/tasks/', {
 			title: task.title,
-			body: "<p>"+task.body+"</p>"
+			body: '<p>'+task.body+'</p>'
 		}).then(function successCallback(response) {
 			task.title = '';
 			task.body = '';
@@ -26,7 +25,7 @@ export class AddCaseComponent {
 
 	isLoading() {
 		var res = this.$http.pendingRequests.length > 0;
-		this.button_label = (res) ? "Creating":"Create";
+		this.button_label = (res) ? 'Creating':'Create';
     	return res;
 	}
 }

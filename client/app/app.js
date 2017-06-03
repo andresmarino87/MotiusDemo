@@ -17,14 +17,13 @@ import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import addCase from './addCase/addCase.component';
+import milestones from './milestones/milestones.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
 import './app.scss';
 
-angular.module('motiusDemoApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar,
-	footer, main, constants, util, addCase
-]).config(routeConfig);
+angular.module('motiusDemoApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar, footer, main, constants, util, addCase, milestones]).config(routeConfig);
 
 angular.element(document).ready(() => {
 	angular.bootstrap(document, ['motiusDemoApp'], {

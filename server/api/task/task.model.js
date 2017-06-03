@@ -4,9 +4,9 @@ import mongoose from 'mongoose';
 import {registerEvents} from './task.events';
 
 var TaskSchema = new mongoose.Schema({
-  title: String,
-  body: String,
-  milestones: Array
+	title: String,
+	body: String,
+	milestones: Array
 });
 
 registerEvents(TaskSchema);

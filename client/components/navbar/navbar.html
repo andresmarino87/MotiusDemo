@@ -14,9 +14,7 @@
 				<li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
 					<a ui-sref="{{item.state}}">
 						<span class="text-center">
-							<i ng-if="item.state == 'addCase'" class="fa fa-plus d-inline-block align-top vertical-align">
-							</i>
-							<i ng-if="item.state == 'main'" class="fa fa-home d-inline-block align-top vertical-align">
+							<i class="fa {{item.icon}} d-inline-block align-top vertical-align">
 							</i>
 							{{item.title}}
 						</span>

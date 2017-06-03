@@ -5,12 +5,12 @@
 // ==================================
 module.exports = {
 
-  // MongoDB connection options
-  mongo: {
-    uri: 'mongodb://localhost/motiusdemo-dev'
-  },
+	// MongoDB connection options
+	mongo: {
+		uri: 'mongodb://localhost/motiusdemo-dev'
+	},
 
-  // Seed database on startup
-  seedDB: true
+	// Seed database on startup
+	seedDB: true
 
 };

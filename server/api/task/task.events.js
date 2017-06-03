@@ -12,23 +12,23 @@ TaskEvents.setMaxListeners(0);
 
 // Model events
 var events = {
-  save: 'save',
-  remove: 'remove'
+	save: 'save',
+	remove: 'remove'
 };
 
 // Register the event emitter to the model events
 function registerEvents(Task) {
-  for(var e in events) {
-    let event = events[e];
-    Task.post(e, emitEvent(event));
-  }
+	for(var e in events) {
+		let event = events[e];
+		Task.post(e, emitEvent(event));
+	}
 }
 
 function emitEvent(event) {
-  return function(doc) {
-    TaskEvents.emit(event + ':' + doc._id, doc);
-    TaskEvents.emit(event, doc);
-  };
+	return function(doc) {
+		TaskEvents.emit(event + ':' + doc._id, doc);
+		TaskEvents.emit(event, doc);
+	};
 }
 
 export {registerEvents};
