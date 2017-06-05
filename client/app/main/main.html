@@ -8,8 +8,15 @@
 				<div class="thumbnail-body">
 					<div ng-bind-html="task.body"></div>
 				</div>
-				<div class="btn btn-primary bottom-aligned light-blue-button" ng-click="$ctrl.display_milestone(task)">Milestone</div>
+				<div class="btn btn-primary bottom-aligned light-blue-button" ng-click="$ctrl.displayMilestone(task)">Milestone</div>
 			</div>
+		</div>
+	</div>
+
+	<div id="popup" class="popup">
+		<div class="popup-inner">
+			<div id="timeline"></div>
+			<a id="close-popup" class="popup-close" href="#">x</a>
 		</div>
 	</div>
 </div>

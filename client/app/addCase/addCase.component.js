@@ -13,10 +13,14 @@ export class AddCaseComponent {
 	}
 
 	addTask(task) {
+		var body = `<p> ${task.body} </p>`;
+		console.log(body);
+
 		this.$http.post('/api/tasks/', {
 			title: task.title,
-			body: '<p>' + task.body + '</p>'
+			body: body
 		}).then(function successCallback(response) {
+			console.log(response);
 			task.title = '';
 			task.body = '';
 		}, function errorCallback(response) {
@@ -26,7 +30,7 @@ export class AddCaseComponent {
 
 	isLoading() {
 		var res = this.$http.pendingRequests.length > 0;
-		this.buttonLabel = (res) ? 'Creating' : 'Create';
+		this.buttonLabel = res ? 'Creating' : 'Create';
 		return res;
 	}
 }

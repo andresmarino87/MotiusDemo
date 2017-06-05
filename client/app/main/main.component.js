@@ -1,39 +1,66 @@
+'use strict';
+
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
 	$http;
+	$modal;
 	tasks = [];
-	modal;
+	VisDataSet;
+	options = {};
 
 	/*@ngInject*/
-	constructor($http, $uibModal) {
+	constructor($http, $uibModal, VisDataSet) {
 		this.$http = $http;
-		this.modal = $uibModal;
+		this.$modal = $uibModal;
+		this.VisDataSet = VisDataSet;
+		this.options = {
+			align: 'center',
+			autoResize: true,
+			editable: true,
+			selectable: true,
+			orientation: 'bottom',
+			showCurrentTime: true,
+			showMajorLabels: true,
+			showMinorLabels: true
+		};
 	}
 
 	$onInit() {
 		this.$http.get('/api/tasks').then(response => {
 			this.tasks = response.data;
 		});
-	}
 
-	display_milestone(task) {
-//		const modalTemplate = '<div class="source-list-modal"><div class="modal-header"><h3 class="modal-title">My Modal Title</h3><div class="controls"><button class="btn btn-primary" type="button" ng-click="save()">Save</button></div></div><div class="modal-body"><my-directive some-data="syncData" more-data="asyncData"></my-directive></div></div>';
-		console.log(task.milestones);
-		this.modal.open({
-			animation: true,
-			templateUrl: 'http://localhost:3000/addCase'
-		//user => {
-//      user.$remove();
-  //    this.users.splice(this.users.indexOf(user), 1);
-   // }
-		}).result.then(function() {}, function(res) {
-			console.log(res);
+		/***** CLOSE POPUP ******/
+		$(function() {
+			$('#close-popup').on('click', function() {
+				$('#popup').fadeOut(350);
+				$('#timeline').empty();
+			});
 		});
 	}
+
+	displayMilestone(task) {
+		$('#popup').fadeIn(350);
+		var container = document.getElementById('timeline');
+
+		// Create a DataSet with data (enables two way data binding)
+		var data = this.VisDataSet();
+		for(var i = 0; i < task.milestones.length; i++) {
+			data.add({
+				id: i,
+				content: task.milestones[i].name,
+				start: task.milestones[i].start_date,
+				end: task.milestones[i].start_date.end_date
+			});
+		}
+
+		var timeline = new vis.Timeline(container, data, this.options);
+	}
 }
+
 
 export default angular.module('motiusDemoApp.main', [uiRouter])
 	.config(routing)

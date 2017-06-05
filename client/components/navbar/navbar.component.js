@@ -12,10 +12,6 @@ export class NavbarComponent {
 		title: 'Add',
 		state: 'addCase',
 		icon: 'fa-plus'
-	}, {
-		title: 'milestones',
-		state: 'milestones',
-		icon: 'fa-plus'
 	}];
 	isCollapsed = true;
 }
