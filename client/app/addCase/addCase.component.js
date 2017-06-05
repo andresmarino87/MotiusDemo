@@ -14,8 +14,6 @@ export class AddCaseComponent {
 
 	addTask(task) {
 		var body = `<p> ${task.body} </p>`;
-		console.log(body);
-
 		this.$http.post('/api/tasks/', {
 			title: task.title,
 			body: body

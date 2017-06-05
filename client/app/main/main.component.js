@@ -3,6 +3,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
+import ngVis from 'angular-visjs';
+import $ from 'jquery';
 
 export class MainController {
 	$http;
@@ -62,7 +64,7 @@ export class MainController {
 }
 
 
-export default angular.module('motiusDemoApp.main', [uiRouter])
+export default angular.module('motiusDemoApp.main', [uiRouter, 'ngVis'])
 	.config(routing)
 	.component('main', {
 		template: require('./main.html'),

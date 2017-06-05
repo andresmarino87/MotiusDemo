@@ -8,7 +8,6 @@ import ngSanitize from 'angular-sanitize';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
-import ngVis from 'angular-visjs';
 
 import {
 	routeConfig
@@ -23,7 +22,7 @@ import util from '../components/util/util.module';
 
 import './app.scss';
 
-angular.module('motiusDemoApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar, footer, main, constants, util, addCase, 'ngVis']).config(routeConfig);
+angular.module('motiusDemoApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, navbar, footer, main, constants, util, addCase]).config(routeConfig);
 
 angular.element(document).ready(() => {
 	angular.bootstrap(document, ['motiusDemoApp'], {
