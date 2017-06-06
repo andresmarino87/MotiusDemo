@@ -31,11 +31,11 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 ### Build & Structure
 
 #### Frontend
-	- Code is in the client folder
-		- main: Contains the main view, components and logic to show all the Usecases and milestone timeline.
-		- addCase: Contains the view, components and logic to add a new Usecase.
-		- client/components/navbar/ can find the view and logic of the navegation bar, the data is in the navbar.component.js
-		- client/app/app.js are injected all the angular modules that are necesary for the project 
+- Code is in the client folder
+	- main: Contains the main view, components and logic to show all the Usecases and milestone timeline.
+	- addCase: Contains the view, components and logic to add a new Usecase.
+	- client/components/navbar/ can find the view and logic of the navegation bar, the data is in the navbar.component.js
+	- client/app/app.js are injected all the angular modules that are necesary for the project 
 #### Backend code is in the server folder
-	- Code is in the server folder
-		- api/task: contains the logic and endpoint for crud a new task, in task_model.js is describe the model of the Usecase
+- Code is in the server folder
+	- api/task: contains the logic and endpoint for crud a new task, in task_model.js is describe the model of the Usecase
