@@ -13,9 +13,9 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 ### Technologies used:
 
-- 	MongoDB
-- 	Node
-- 	Express
+- MongoDB
+- Node
+- Express
 - 	Angular - Angular FullStack generator [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.0.
 - 	Bootstrap for responsive
 - 	Vis.js for charting library
@@ -30,7 +30,7 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 ### Build & Structure
 
--Frontend
--code is in the client folder
--Backend code is in the server folder
---asdds
+- Frontend
+	- code is in the client folder
+- Backend code is in the server folder
+-- asdds
