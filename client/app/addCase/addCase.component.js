@@ -12,6 +12,7 @@ export class AddCaseComponent {
 		this.$http = $http;
 	}
 
+	/* Add new task funcionality */
 	addTask(task) {
 		var body = `<p> ${task.body} </p>`;
 		this.$http.post('/api/tasks/', {

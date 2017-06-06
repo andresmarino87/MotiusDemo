@@ -31,11 +31,12 @@ export class MainController {
 	}
 
 	$onInit() {
+		// Load initial data
 		this.$http.get('/api/tasks').then(response => {
 			this.tasks = response.data;
 		});
 
-		/***** CLOSE POPUP ******/
+		/***** CLOSE POPUP and destroy previus timelines ******/
 		$(function() {
 			$('#close-popup').on('click', function() {
 				$('#popup').fadeOut(350);
@@ -44,6 +45,7 @@ export class MainController {
 		});
 	}
 
+	// Handle the show of the milestone 
 	displayMilestone(task) {
 		$('#popup').fadeIn(350);
 		var container = document.getElementById('timeline');
@@ -59,6 +61,7 @@ export class MainController {
 			});
 		}
 
+		// Create the timeline
 		var timeline = new vis.Timeline(container, data, this.options);
 	}
 }

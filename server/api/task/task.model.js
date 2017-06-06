@@ -3,6 +3,7 @@
 import mongoose from 'mongoose';
 import {registerEvents} from './task.events';
 
+// Task model
 var TaskSchema = new mongoose.Schema({
 	title: String,
 	body: String,

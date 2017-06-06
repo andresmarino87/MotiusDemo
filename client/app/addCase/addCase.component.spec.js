@@ -13,12 +13,6 @@ describe('Component: AddCaseComponent', function() {
 	var state;
 	var $httpBackend;
 
-	// Initialize the controller and a mock scope
-//	beforeEach(inject(function($componentController) {
-//		AddCaseComponent = $componentController('addCase', {});/
-//	}));
-
-
 	beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope, $state) {
 		$httpBackend = _$httpBackend_;
 		$httpBackend.expectGET('/api/things')
