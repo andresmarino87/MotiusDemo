@@ -4,8 +4,6 @@ This is a demo for Motius java script test
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.0.
 
-## Getting Started
-
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
@@ -14,6 +12,7 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 - [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
 
 ### Technologies used:
+
 - 	MongoDB
 - 	Node
 - 	Express
@@ -31,7 +30,7 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 ### Build & Structure
 
--Frontend code is in the client folder
-	-casd
+-Frontend
+-code is in the client folder
 -Backend code is in the server folder
-	-asdds
+--asdds
