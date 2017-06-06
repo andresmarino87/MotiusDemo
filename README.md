@@ -14,12 +14,12 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 - [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
 
 ### Technologies used:
-	MongoDB
-	Node
-	Express
-	Angular - Angular FullStack generator [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.0.
-	Bootstrap for responsive
-	Vis for charting library
+- 	MongoDB
+- 	Node
+- 	Express
+- 	Angular - Angular FullStack generator [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.0.
+- 	Bootstrap for responsive
+- 	Vis.js for charting library
 
 ### Instructions to Install and Run
 
@@ -31,7 +31,7 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 ### Build & Structure
 
-##Frontend code is in the client folder
-casd
-##Backend code is in the server folder
-asdds
+-Frontend code is in the client folder
+	-casd
+-Backend code is in the server folder
+	-asdds
