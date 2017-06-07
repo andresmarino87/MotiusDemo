@@ -27,6 +27,7 @@ export class AddCaseComponent {
 		});
 	}
 
+	/* Change button label when is creating a new task */
 	isLoading() {
 		var res = this.$http.pendingRequests.length > 0;
 		this.buttonLabel = res ? 'Creating' : 'Create';
